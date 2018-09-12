@@ -32,15 +32,15 @@ class Card:
 class Deck:
 
     def __init__(self):
-        self.deck = []  # start with an empty list
+        self.deck = []  # empty list
         for suit in suits:
             for rank in ranks:
                 self.deck.append(Card(suit, rank))
 
     def __str__(self):
-        deck_comp = ''  # start with an empty string
+        deck_comp = ''  # empty string
         for card in self.deck:
-            deck_comp += '\n ' + card.__str__()  # add each Card object's print string
+            deck_comp += '\n ' + card.__str__()
         return 'The deck has:' + deck_comp
 
     def shuffle(self):
@@ -54,7 +54,7 @@ class Deck:
 class Hand:
 
     def __init__(self):
-        self.cards = []  # start with an empty list as we did in the Deck class
+        self.cards = []  # empty list like Deck class
         self.value = 0   # start with zero value
         self.aces = 0    # add an attribute to keep track of aces
 
@@ -189,7 +189,7 @@ while True:
     dealer_hand.add_card(deck.deal())
 
     # Set up the Player's chips
-    player_chips = Chips()  # remember the default value is 100
+    player_chips = Chips()  # default value is 100
 
     # Prompt the Player for their bet:
     take_bet(player_chips)
@@ -197,7 +197,7 @@ while True:
     # Show the cards:
     show_some(player_hand, dealer_hand)
 
-    while playing:  # recall this variable from our hit_or_stand function
+    while playing:  # recall from hit_or_stand function
 
         # Prompt for Player to Hit or Stand
         hit_or_stand(deck, player_hand)
